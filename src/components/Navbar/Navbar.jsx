@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [country, setCountry] = useState("in");
+  const navigate = useNavigate();
 
   const handleCountry = (event) => {
     var country = event.target.value;
     console.log(country);
     setCountry(country);
+    navigate(`/${country}`, { replace: true });
   };
 
   return (
@@ -77,7 +79,34 @@ const Navbar = () => {
             >
               <option value="in">IND</option>
               <option value="us">USA</option>
+              <option value="gb">BRITIAN</option>
             </select>
+            {/* <div class="d-grid gap-2 d-md-block">
+              <button
+                class="btn btn-light "
+                onClick={handleCountry}
+                type="button"
+                value="in"
+              >
+                INDIA
+              </button>
+              <button
+                class="btn btn-light "
+                onClick={handleCountry}
+                type="button"
+                value="us"
+              >
+                USA
+              </button>
+              <button
+                class="btn btn-light "
+                onClick={handleCountry}
+                type="button"
+                value="gb"
+              >
+                BRITAIN
+              </button>
+            </div> */}
           </ul>
         </div>
       </div>

@@ -20,7 +20,7 @@ const NewsItem = (props) => {
           {new Date(date).toUTCString()}
         </p>
         <a href={newsUrl} className="btn btn-sm btn-dark">
-          Read More
+          Read More...
         </a>
       </div>
     </div>
