@@ -10,6 +10,9 @@ const Navbar = () => {
     console.log(country);
     setCountry(country);
     navigate(`/${country}`, { replace: true });
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 1000);
   };
 
   return (
@@ -81,32 +84,6 @@ const Navbar = () => {
               <option value="us">USA</option>
               <option value="gb">BRITIAN</option>
             </select>
-            {/* <div class="d-grid gap-2 d-md-block">
-              <button
-                class="btn btn-light "
-                onClick={handleCountry}
-                type="button"
-                value="in"
-              >
-                INDIA
-              </button>
-              <button
-                class="btn btn-light "
-                onClick={handleCountry}
-                type="button"
-                value="us"
-              >
-                USA
-              </button>
-              <button
-                class="btn btn-light "
-                onClick={handleCountry}
-                type="button"
-                value="gb"
-              >
-                BRITAIN
-              </button>
-            </div> */}
           </ul>
         </div>
       </div>
