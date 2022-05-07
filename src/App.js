@@ -2,8 +2,8 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import SigninAndSignup from "./components/SigninandSignup/SigninAndSignUp";
-
 import { Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
           element={
             <>
               <SigninAndSignup />
+              <Footer />
             </>
           }
         ></Route>

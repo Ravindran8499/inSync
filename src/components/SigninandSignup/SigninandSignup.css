@@ -3,5 +3,12 @@
   display: flex;
   width: 900px;
   justify-content: space-between;
-  margin: 30px auto;
+  margin: 15px auto;
+}
+
+.left {
+  margin-right: 30px;
+}
+.right {
+  margin-left: 30px;
 }

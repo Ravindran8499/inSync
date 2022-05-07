@@ -9,10 +9,11 @@ const Navbar = () => {
     var country = event.target.value;
     console.log(country);
     setCountry(country);
+    //<Link to={`/${country}`} />;
     navigate(`/${country}`, { replace: true });
     setTimeout(() => {
       window.location.reload(true);
-    }, 1000);
+    }, 1500);
   };
 
   return (
@@ -74,7 +75,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <ul>
+          <ul className="">
             <select
               onClick={handleCountry}
               className="form-select form-select-sm "
