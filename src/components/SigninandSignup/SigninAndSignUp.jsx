@@ -8,10 +8,10 @@ const SigninAndSignup = () => {
   return (
     <div className="authentication-container container">
       <div className="row">
-        <div className="col mr-2 left">
+        <div className="col-md mr-2 left">
           <SignInForm />
         </div>
-        <div className="col ml-2 right">
+        <div className="col-md ml-2 right">
           <SignUpForm />
         </div>
       </div>

@@ -28,7 +28,7 @@ const App = () => {
                 country="in"
                 category="general"
               />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -43,7 +43,7 @@ const App = () => {
                 country="in"
                 category="business"
               />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -57,7 +57,7 @@ const App = () => {
                 country="in"
                 category="entertainment"
               />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -65,8 +65,8 @@ const App = () => {
           path="/in/health"
           element={
             <>
-              <News key="health" pageSize={6} country="in" category="health" />{" "}
-              <Navbar />
+              <News key="health" pageSize={6} country="in" category="health" />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -80,7 +80,7 @@ const App = () => {
                 country="in"
                 category="science"
               />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -89,7 +89,7 @@ const App = () => {
           element={
             <>
               <News key="sports" pageSize={6} country="in" category="sports" />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -103,7 +103,7 @@ const App = () => {
                 country="in"
                 category="technology"
               />
-              <Navbar />
+              <Navbar country="in" />
             </>
           }
         ></Route>
@@ -117,7 +117,7 @@ const App = () => {
                 country="us"
                 category="general"
               />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -131,7 +131,7 @@ const App = () => {
                 country="us"
                 category="business"
               />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -145,7 +145,7 @@ const App = () => {
                 country="us"
                 category="entertainment"
               />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -154,7 +154,7 @@ const App = () => {
           element={
             <>
               <News key="health" pageSize={6} country="us" category="health" />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -168,7 +168,7 @@ const App = () => {
                 country="us"
                 category="science"
               />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -177,7 +177,7 @@ const App = () => {
           element={
             <>
               <News key="sports" pageSize={6} country="us" category="sports" />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -191,7 +191,7 @@ const App = () => {
                 country="us"
                 category="technology"
               />
-              <Navbar />
+              <Navbar country="us" />
             </>
           }
         ></Route>
@@ -205,7 +205,7 @@ const App = () => {
                 country="gb"
                 category="general"
               />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -219,7 +219,7 @@ const App = () => {
                 country="gb"
                 category="business"
               />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -233,7 +233,7 @@ const App = () => {
                 country="gb"
                 category="entertainment"
               />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -242,7 +242,7 @@ const App = () => {
           element={
             <>
               <News key="health" pageSize={6} country="gb" category="health" />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -256,7 +256,7 @@ const App = () => {
                 country="gb"
                 category="science"
               />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -265,7 +265,7 @@ const App = () => {
           element={
             <>
               <News key="sports" pageSize={6} country="gb" category="sports" />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>
@@ -279,7 +279,7 @@ const App = () => {
                 country="gb"
                 category="technology"
               />
-              <Navbar />
+              <Navbar country="gb" />
             </>
           }
         ></Route>

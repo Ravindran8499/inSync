@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactDOM } from "react";
+
 import "./Footer.css";
 
 import InstagramIcon from "@mui/icons-material/Instagram";

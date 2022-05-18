@@ -1,26 +1,34 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../Firebase/firebase.utils";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [country, setCountry] = useState("in");
+  const [countryChange, setCountryChange] = useState(props.country);
   const navigate = useNavigate();
 
   const handleCountry = (event) => {
     var country = event.target.value;
-    console.log(country);
+    setCountryChange(country);
     setCountry(country);
-    //<Link to={`/${country}`} />;
+    console.log(country);
+
     navigate(`/${country}`, { replace: true });
     setTimeout(() => {
       window.location.reload(true);
-    }, 1500);
+    }, 2000);
   };
 
+  const logout = () => {
+    auth.signOut().then(() => {
+      navigate("/");
+    });
+  };
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to={`/${country}`}>
-          InShorts
+        <Link className="navbar-brand" to={`/${props.country}`}>
+          InSync
         </Link>
         <button
           className="navbar-toggler"
@@ -39,53 +47,68 @@ const Navbar = () => {
               <Link
                 className="nav-link "
                 aria-current="page"
-                to={`/${country}`}
+                to={`/${props.country}`}
               >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/business`}>
+              <Link className="nav-link" to={`/${props.country}/business`}>
                 Business
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/entertainment`}>
+              <Link className="nav-link" to={`/${props.country}/entertainment`}>
                 Entertainment
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/health`}>
+              <Link className="nav-link" to={`/${props.country}/health`}>
                 Health
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/science`}>
+              <Link className="nav-link" to={`/${props.country}/science`}>
                 Science
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/sports`}>
+              <Link className="nav-link" to={`/${props.country}/sports`}>
                 Sports
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/${country}/technology`}>
+              <Link className="nav-link" to={`/${props.country}/technology`}>
                 Technology
               </Link>
             </li>
           </ul>
-          <ul className="">
-            <select
-              onClick={handleCountry}
-              className="form-select form-select-sm "
-              aria-label="Default select example"
-            >
-              <option value="in">IND</option>
-              <option value="us">USA</option>
-              <option value="gb">BRITIAN</option>
-            </select>
-          </ul>
+
+          <div className="row">
+            <div className="nav-item col my-auto">
+              <select
+                onChange={handleCountry}
+                className="form-select form-select-sm "
+                aria-label="Default select example"
+                defaultValue={props.country}
+              >
+                <option onClick={handleCountry} value="in">
+                  IND
+                </option>
+                <option onClick={handleCountry} value="us">
+                  USA
+                </option>
+                <option onClick={handleCountry} value="gb">
+                  UK
+                </option>
+              </select>
+            </div>
+            <div className="nav-item col my-auto">
+              <button className="btn btn-info btn-sm" onClick={logout}>
+                Sign Out
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

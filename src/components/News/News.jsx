@@ -113,10 +113,10 @@ const News = (props) => {
   return (
     <>
       <h1
-        className="text-muted text-center"
+        className="text-muted text-center "
         style={{ margin: "40px 0px", marginTop: "80px" }}
       >
-        InSync - Your Daily Dose of NEWS
+        InSync | Your Daily Dose of NEWS
       </h1>
 
       {loading && <Loading />}
