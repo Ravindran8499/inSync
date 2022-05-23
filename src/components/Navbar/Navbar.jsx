@@ -26,7 +26,9 @@ const Navbar = (props) => {
     });
   };
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to={`/${props.country}`}>
           InSync
@@ -42,7 +44,12 @@ const Navbar = (props) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className={`collapse navbar-collapse text-${
+            props.mode === "light" ? "dark" : "light"
+          }`}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link
@@ -84,6 +91,23 @@ const Navbar = (props) => {
               </Link>
             </li>
           </ul>
+
+          <div
+            class={`form-check form-switch text-${
+              props.mode === "light" ? "dark" : "light"
+            } px-2 mx-2`}
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              onClick={props.toggleMode}
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault">
+              {props.btnText}
+            </label>
+          </div>
 
           <div className="row">
             <div className="nav-item col my-auto">

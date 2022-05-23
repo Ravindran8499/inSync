@@ -47,56 +47,60 @@ const News = (props) => {
     setLoading(false);
   };
 
-  var myStyle = {
-    background: "black",
-    position: "absolute",
+  let myStyle = {
+    background: `${props.mode === "light" ? "#0F0E0E" : "white"}`,
     top: "0px",
     right: "0px",
     bottom: "0px",
     left: "0px",
   };
-
   return (
     <>
-      <h1
-        className="text-muted text-center "
-        style={{ margin: "40px 0px", marginTop: "80px" }}
-      >
-        InSync | Your Daily Dose of NEWS
-      </h1>
-
-      {loading && <Loading />}
-
-      <InfiniteScroll
-        dataLength={articles.length}
-        next={fetchMoreData}
-        hasMore={articles.length !== totalResults}
-        loader={<Loading />}
-      >
-        <div className="container">
-          <div className="row">
-            {articles.map((element) => {
-              return (
-                <div className="col-md-4" key={element.url}>
-                  <NewsItem
-                    title={element.title ? element.title : ""}
-                    description={element.description ? element.description : ""}
-                    imageUrl={
-                      element.urlToImage
-                        ? element.urlToImage
-                        : "https://static.theprint.in/wp-content/uploads/2020/11/Brahmos.jpg"
-                    }
-                    newsUrl={element.url}
-                    author={element.author ? element.author : "Unknown"}
-                    date={element.publishedAt}
-                    source={element.source.name}
-                  />
-                </div>
-              );
-            })}
+      <div style={myStyle}>
+        <h1
+          className=" text-center "
+          style={{
+            margin: "0px 0px",
+            paddingTop: "80px",
+            color: `${props.mode === "dark" ? "#0F0E0E" : "white"}`,
+          }}
+        >
+          InSync | Your Daily Dose of NEWS
+        </h1>
+        {loading && <Loading />}
+        <InfiniteScroll
+          dataLength={articles.length}
+          next={fetchMoreData}
+          hasMore={articles.length !== totalResults}
+          loader={<Loading />}
+        >
+          <div className="container">
+            <div className="row">
+              {articles.map((element) => {
+                return (
+                  <div className="col-md-4" key={element.url}>
+                    <NewsItem
+                      title={element.title ? element.title : ""}
+                      description={
+                        element.description ? element.description : ""
+                      }
+                      imageUrl={
+                        element.urlToImage
+                          ? element.urlToImage
+                          : "https://static.theprint.in/wp-content/uploads/2020/11/Brahmos.jpg"
+                      }
+                      newsUrl={element.url}
+                      author={element.author ? element.author : "Unknown"}
+                      date={element.publishedAt}
+                      source={element.source.name}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </InfiniteScroll>
+        </InfiniteScroll>
+      </div>
     </>
   );
 };

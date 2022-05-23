@@ -4,8 +4,22 @@ import News from "./components/News/News";
 import SigninAndSignup from "./components/SigninandSignup/SigninAndSignUp";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
+import { useState } from "react";
 
 const App = () => {
+  const [mode, setMode] = useState("light");
+  const [btnText, setText] = useState("Enable Dark Mode");
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      setText("Enable Light Mode");
+    } else {
+      setMode("light");
+      setText("Enable Dark Mode");
+    }
+  };
+
   return (
     <div>
       <Routes>
@@ -27,8 +41,14 @@ const App = () => {
                 pageSize={6}
                 country="in"
                 category="general"
+                mode={mode}
               />
-              <Navbar country="in" />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -36,14 +56,19 @@ const App = () => {
           path="/in/business"
           element={
             <>
-              {" "}
               <News
                 key="business"
                 pageSize={6}
                 country="in"
                 category="business"
+                mode={mode}
               />
-              <Navbar country="in" />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -56,8 +81,14 @@ const App = () => {
                 pageSize={6}
                 country="in"
                 category="entertainment"
+                mode={mode}
               />
-              <Navbar country="in" />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -65,8 +96,19 @@ const App = () => {
           path="/in/health"
           element={
             <>
-              <News key="health" pageSize={6} country="in" category="health" />
-              <Navbar country="in" />
+              <News
+                key="health"
+                pageSize={6}
+                country="in"
+                category="health"
+                mode={mode}
+              />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -79,8 +121,14 @@ const App = () => {
                 pageSize={6}
                 country="in"
                 category="science"
+                mode={mode}
               />
-              <Navbar country="in" />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -88,8 +136,19 @@ const App = () => {
           path="/in/sports"
           element={
             <>
-              <News key="sports" pageSize={6} country="in" category="sports" />
-              <Navbar country="in" />
+              <News
+                key="sports"
+                pageSize={6}
+                country="in"
+                category="sports"
+                mode={mode}
+              />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -102,8 +161,14 @@ const App = () => {
                 pageSize={6}
                 country="in"
                 category="technology"
+                mode={mode}
               />
-              <Navbar country="in" />
+              <Navbar
+                country="in"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -116,8 +181,14 @@ const App = () => {
                 pageSize={6}
                 country="us"
                 category="general"
+                mode={mode}
               />
-              <Navbar country="us" />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -130,8 +201,14 @@ const App = () => {
                 pageSize={6}
                 country="us"
                 category="business"
+                mode={mode}
               />
-              <Navbar country="us" />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -144,8 +221,14 @@ const App = () => {
                 pageSize={6}
                 country="us"
                 category="entertainment"
+                mode={mode}
               />
-              <Navbar country="us" />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -153,8 +236,19 @@ const App = () => {
           path="/us/health"
           element={
             <>
-              <News key="health" pageSize={6} country="us" category="health" />
-              <Navbar country="us" />
+              <News
+                key="health"
+                pageSize={6}
+                country="us"
+                category="health"
+                mode={mode}
+              />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -167,8 +261,14 @@ const App = () => {
                 pageSize={6}
                 country="us"
                 category="science"
+                mode={mode}
               />
-              <Navbar country="us" />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -176,8 +276,19 @@ const App = () => {
           path="/us/sports"
           element={
             <>
-              <News key="sports" pageSize={6} country="us" category="sports" />
-              <Navbar country="us" />
+              <News
+                key="sports"
+                pageSize={6}
+                country="us"
+                category="sports"
+                mode={mode}
+              />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -190,8 +301,14 @@ const App = () => {
                 pageSize={6}
                 country="us"
                 category="technology"
+                mode={mode}
               />
-              <Navbar country="us" />
+              <Navbar
+                country="us"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -204,8 +321,14 @@ const App = () => {
                 pageSize={6}
                 country="gb"
                 category="general"
+                mode={mode}
               />
-              <Navbar country="gb" />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -218,8 +341,14 @@ const App = () => {
                 pageSize={6}
                 country="gb"
                 category="business"
+                mode={mode}
               />
-              <Navbar country="gb" />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -232,8 +361,14 @@ const App = () => {
                 pageSize={6}
                 country="gb"
                 category="entertainment"
+                mode={mode}
               />
-              <Navbar country="gb" />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -241,8 +376,19 @@ const App = () => {
           path="/gb/health"
           element={
             <>
-              <News key="health" pageSize={6} country="gb" category="health" />
-              <Navbar country="gb" />
+              <News
+                key="health"
+                pageSize={6}
+                country="gb"
+                category="health"
+                mode={mode}
+              />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -255,8 +401,14 @@ const App = () => {
                 pageSize={6}
                 country="gb"
                 category="science"
+                mode={mode}
               />
-              <Navbar country="gb" />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -264,8 +416,19 @@ const App = () => {
           path="/gb/sports"
           element={
             <>
-              <News key="sports" pageSize={6} country="gb" category="sports" />
-              <Navbar country="gb" />
+              <News
+                key="sports"
+                pageSize={6}
+                country="gb"
+                category="sports"
+                mode={mode}
+              />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
@@ -278,8 +441,14 @@ const App = () => {
                 pageSize={6}
                 country="gb"
                 category="technology"
+                mode={mode}
               />
-              <Navbar country="gb" />
+              <Navbar
+                country="gb"
+                mode={mode}
+                toggleMode={toggleMode}
+                btnText={btnText}
+              />
             </>
           }
         ></Route>
