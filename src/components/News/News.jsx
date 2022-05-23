@@ -29,69 +29,6 @@ const News = (props) => {
     setLoading(false);
   };
 
-  // async componentDidMount() {
-  //   const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=7386c959b63b4308ae9555476ed427e4&page=1&pageSize=${props.pageSize}`;
-  //   setState({
-  //     loading: true,
-  //   });
-  //   const data = await fetch(url);
-  //   const parsedData = await data.json();
-  //   console.log(parsedData);
-  //   setState({
-  //     articles: parsedData.articles,
-  //     totalResults: parsedData.totalResults,
-  //     loading: false,
-  //   });
-  // }
-  // handlePreviousClick = async () => {
-  //   console.log(" Previous Clicked");
-  //   const url = `https://newsapi.org/v2/top-headlines?country=${
-  //     props.country
-  //   }&category=${
-  //     props.category
-  //   }&apiKey=7386c959b63b4308ae9555476ed427e4&page=
-  //   ${state.page - 1}&pageSize=${props.pageSize}`;
-  //   setState({
-  //     loading: true,
-  //   });
-  //   const data = await fetch(url);
-  //   const parsedData = await data.json();
-  //   console.log(parsedData);
-  //   setState({
-  //     articles: parsedData.articles,
-  //     page: state.page - 1,
-  //     loading: false,
-  //   });
-  // };
-
-  // handleNextClick = async () => {
-  //   console.log("Next clicked");
-  //   if (
-  //     state.page + 1 >
-  //     Math.ceil(state.totalResults / props.pageSize)
-  //   ) {
-  //   } else {
-  //     const url = `https://newsapi.org/v2/top-headlines?country=${
-  //       props.country
-  //     }&category=${
-  //       props.category
-  //     }&apiKey=7386c959b63b4308ae9555476ed427e4&page=${
-  //       state.page + 1
-  //     }&pageSize=${props.pageSize}`;
-  //     setState({
-  //       loading: true,
-  //     });
-  //     const data = await fetch(url);
-  //     const parsedData = await data.json();
-  //     console.log(parsedData);
-  //     setState({
-  //       articles: parsedData.articles,
-  //       page: state.page + 1,
-  //       loading: false,
-  //     });
-  //   }
-  // };
-
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
@@ -108,6 +45,15 @@ const News = (props) => {
     setArticles(articles.concat(parsedData.articles));
     setTotalResults(parsedData.totalResults);
     setLoading(false);
+  };
+
+  var myStyle = {
+    background: "black",
+    position: "absolute",
+    top: "0px",
+    right: "0px",
+    bottom: "0px",
+    left: "0px",
   };
 
   return (

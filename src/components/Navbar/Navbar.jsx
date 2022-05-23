@@ -5,6 +5,7 @@ import { auth } from "../../Firebase/firebase.utils";
 const Navbar = (props) => {
   const [country, setCountry] = useState("in");
   const [countryChange, setCountryChange] = useState(props.country);
+
   const navigate = useNavigate();
 
   const handleCountry = (event) => {
@@ -16,7 +17,7 @@ const Navbar = (props) => {
     navigate(`/${country}`, { replace: true });
     setTimeout(() => {
       window.location.reload(true);
-    }, 2000);
+    }, 500);
   };
 
   const logout = () => {
@@ -92,15 +93,9 @@ const Navbar = (props) => {
                 aria-label="Default select example"
                 defaultValue={props.country}
               >
-                <option onClick={handleCountry} value="in">
-                  IND
-                </option>
-                <option onClick={handleCountry} value="us">
-                  USA
-                </option>
-                <option onClick={handleCountry} value="gb">
-                  UK
-                </option>
+                <option value="in">IND</option>
+                <option value="us">USA</option>
+                <option value="gb">UK</option>
               </select>
             </div>
             <div className="nav-item col my-auto">
